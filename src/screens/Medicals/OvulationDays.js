@@ -4,11 +4,11 @@ import { StatusBar } from 'expo-status-bar';
 
 import { useNavigation } from '@react-navigation/native';
 import { Picker } from '@react-native-picker/picker';
-import DateTimePicker from '@react-native-community/datetimepicker';
 import moment from 'moment';
 
 //Import Icons
 import { Ionicons } from '@expo/vector-icons';
+import RNDateTimePicker from '@react-native-community/datetimepicker';
 
 const OvulationDays = () => {
   const navigation = useNavigation();
@@ -135,11 +135,9 @@ const OvulationDays = () => {
                <Picker.Item label="35" value="35" fontFamily='Monstserrat_SemiBold' color='#5e5e5e' style={{ fontSize: 24}} />
       </Picker></View>
       {show && (
-              <DateTimePicker
-                testID="dateTimePicker"
+              <RNDateTimePicker
                 value={date}
-                mode={mode}
-                is24Hour={true}
+                mode='date'
                 onChange={onChange}
               />
                )}
